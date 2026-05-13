@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brit Myers &#8212; Pet &amp; House Sitting on Vashon Island</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--fog:#eef0ec;--lichen:#d4d9c8;--forest:#2c3d2e;--fern:#4a6650;--tide:#5c7d6e;--amber:#c4892a;--ink:#1e2b20;--mist:#f4f5f0;--stone:#6b7864;--cream:#faf8f3;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Jost',sans-serif;background:var(--fog);color:var(--ink);line-height:1.7;overflow-x:hidden;}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:1rem 2.5rem;display:flex;justify-content:space-between;align-items:center;transition:background .4s,box-shadow .4s;}
+nav.scrolled{background:rgba(238,240,236,.94);backdrop-filter:blur(16px);box-shadow:0 1px 0 rgba(44,61,46,.1);}
+.nav-name{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--forest);}
+.nav-links{display:flex;gap:2rem;list-style:none;}
+.nav-links a{font-size:.78rem;font-weight:400;letter-spacing:.1em;text-transform:uppercase;color:var(--fern);text-decoration:none;transition:color .2s;}
+.nav-links a:hover{color:var(--forest);}
+
+.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 35%;}
+.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(15,26,15,.9) 0%,rgba(15,26,15,.45) 55%,rgba(15,26,15,.1) 100%);}
+.hero-content{position:relative;z-index:2;padding:0 3rem 5rem;max-width:780px;}
+.hero-eyebrow{font-size:.72rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(212,217,200,.75);margin-bottom:1.2rem;display:flex;align-items:center;gap:.8rem;opacity:0;animation:fadeUp .8s ease forwards .3s;}
+.eyebrow-line{width:2rem;height:1px;background:rgba(212,217,200,.6);flex-shrink:0;}
+h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5vw,4.2rem);font-weight:400;line-height:1.15;color:var(--fog);letter-spacing:-.01em;margin-bottom:1.4rem;opacity:0;animation:fadeUp .9s ease forwards .45s;}
+h1 em{font-style:italic;color:#a8c5a0;}
+.hero-desc{font-size:1rem;font-weight:300;color:rgba(238,240,236,.75);max-width:500px;line-height:1.85;margin-bottom:2.5rem;opacity:0;animation:fadeUp .9s ease forwards .6s;}
+.cta-group{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:fadeUp .9s ease forwards .75s;}
+.btn-primary{display:inline-block;padding:.9rem 2.2rem;background:var(--fern);color:var(--fog);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;transition:background .2s,transform .15s;}
+.btn-primary:hover{background:#3a5240;transform:translateY(-1px);}
+.btn-outline{display:inline-block;padding:.9rem 2.2rem;border:1px solid rgba(212,217,200,.5);color:var(--fog);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:border-color .2s,transform .15s;}
+.btn-outline:hover{border-color:rgba(212,217,200,.9);transform:translateY(-1px);}
+
+.photo-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;background:var(--ink);}
+.strip-img{aspect-ratio:1;overflow:hidden;}
+.strip-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease;}
+.strip-img:hover img{transform:scale(1.06);}
+
+.section-wrap{max-width:1000px;margin:0 auto;padding:6rem 2.5rem;}
+.section-label{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--tide);margin-bottom:.7rem;}
+h2{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,3.2vw,2.7rem);font-weight:400;color:var(--forest);line-height:1.25;margin-bottom:1.2rem;}
+h2 em{font-style:italic;color:var(--fern);}
+.rule{width:100%;height:1px;background:linear-gradient(90deg,var(--lichen),transparent);}
+
+.about-layout{display:grid;grid-template-columns:1.5fr 0.65fr;gap:3.5rem;align-items:start;margin-top:3rem;}
+.about-text p{font-size:.97rem;color:var(--stone);font-weight:300;line-height:1.9;margin-bottom:1.2rem;}
+.about-text p strong{font-weight:500;color:var(--ink);}
+.about-photo-stack{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
+.about-photo-stack .p1{grid-column:1/-1;}
+.about-photo-stack img{width:100%;object-fit:cover;display:block;}
+.about-photo-stack .p1 img{height:220px;}
+.about-photo-stack .p2 img,.about-photo-stack .p3 img{height:158px;}
+.creds{margin-top:2rem;border-top:2px solid var(--forest);padding-top:1.5rem;}
+.creds-title{font-family:'Playfair Display',serif;font-size:.9rem;font-style:italic;color:var(--forest);margin-bottom:1.2rem;}
+.cred{display:flex;gap:.7rem;margin-bottom:1rem;align-items:flex-start;}
+.cred-dot{width:5px;height:5px;border-radius:50%;background:var(--fern);margin-top:.62rem;flex-shrink:0;}
+.cred-text{font-size:.86rem;color:var(--stone);font-weight:300;line-height:1.65;}
+.cred-text strong{font-weight:500;color:var(--ink);}
+
+.services-bg{background:var(--forest);}
+.services-bg .section-label{color:rgba(212,217,200,.55);}
+.services-bg h2{color:var(--fog);}
+.services-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:2.5rem;background:rgba(255,255,255,.07);}
+.svc{background:var(--forest);overflow:hidden;position:relative;transition:background .3s;}
+.svc-img{width:100%;height:195px;object-fit:cover;display:block;transition:transform .5s ease;opacity:.72;}
+.svc:hover .svc-img{transform:scale(1.04);opacity:.88;}
+.svc-body{padding:1.6rem 2rem 2rem;}
+.svc::before{content:'';position:absolute;top:0;left:0;width:2px;height:0;background:var(--amber);transition:height .4s ease;z-index:1;}
+.svc:hover::before{height:100%;}
+.svc-glyph{font-size:1.5rem;margin-bottom:.6rem;display:block;}
+.svc-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400;color:var(--fog);margin-bottom:.6rem;}
+.svc-desc{font-size:.87rem;font-weight:300;color:rgba(238,240,236,.62);line-height:1.75;}
+.svc-note{margin-top:1rem;font-size:.76rem;color:rgba(196,137,42,.85);font-style:italic;}
+.bee-card{background:var(--amber)!important;}
+.bee-card .svc-name{color:var(--forest);}
+.bee-card .svc-desc{color:rgba(30,43,32,.72);}
+.bee-card .svc-note{color:rgba(30,43,32,.5);}
+.bee-card .svc-img{opacity:1;}
+.bee-card::before{background:var(--forest)!important;}
+
+.gallery-bg{background:var(--ink);}
+.gallery-bg .section-label{color:rgba(212,217,200,.45);}
+.gallery-bg h2{color:var(--fog);}
+.gallery-sub{font-size:.9rem;font-weight:300;color:rgba(238,240,236,.5);max-width:480px;margin-bottom:2rem;line-height:1.7;}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;}
+.gallery-item{overflow:hidden;}
+.gallery-item img{width:100%;height:218px;object-fit:cover;display:block;transition:transform .5s ease,opacity .3s;opacity:.8;}
+.gallery-item:hover img{transform:scale(1.05);opacity:1;}
+.gallery-item.tall img{height:441px;}
+
+.rates-intro{font-size:.97rem;font-weight:300;color:var(--stone);max-width:520px;line-height:1.85;margin-bottom:2.5rem;}
+.rates-group{margin-bottom:2.5rem;}
+.rates-group-title{font-size:.7rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--fern);padding-bottom:.6rem;border-bottom:1px solid var(--lichen);}
+.rate-row{display:grid;grid-template-columns:1fr 2fr auto;gap:1rem;align-items:baseline;padding:1rem 0;border-bottom:1px solid rgba(212,217,200,.35);}
+.rate-row:last-child{border-bottom:none;}
+.rate-label{font-size:.92rem;font-weight:500;color:var(--ink);}
+.rate-detail{font-size:.85rem;font-weight:300;color:var(--stone);}
+.rate-price{font-family:'Playfair Display',serif;font-size:1.05rem;color:var(--forest);white-space:nowrap;text-align:right;}
+.rates-foot{font-size:.83rem;font-style:italic;color:var(--stone);font-weight:300;border-left:2px solid var(--lichen);padding-left:1rem;line-height:1.7;margin-top:.5rem;}
+
+.place-bg{background:var(--mist);}
+.place-layout{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start;margin-top:3rem;}
+.place-text p{font-size:.96rem;font-weight:300;color:var(--stone);line-height:1.9;margin-bottom:1.1rem;}
+.place-text p strong{font-weight:500;color:var(--ink);}
+.place-img-wrap{position:relative;}
+.place-img-wrap img{width:100%;height:340px;object-fit:cover;display:block;}
+.place-img-caption{position:absolute;bottom:0;left:0;right:0;padding:.65rem 1rem;background:rgba(15,26,15,.6);font-size:.74rem;color:rgba(238,240,236,.7);letter-spacing:.08em;text-transform:uppercase;}
+.place-box{margin-top:1.8rem;padding:1.6rem;background:white;}
+.place-box-title{font-family:'Playfair Display',serif;font-size:.9rem;font-style:italic;color:var(--forest);margin-bottom:1.2rem;}
+.place-list{list-style:none;}
+.place-list li{font-size:.87rem;font-weight:300;color:var(--stone);padding:.55rem 0;border-bottom:1px solid var(--fog);display:flex;align-items:baseline;gap:.6rem;}
+.place-list li:last-child{border-bottom:none;}
+.place-list li::before{content:'—';color:var(--fern);font-size:.75rem;flex-shrink:0;}
+
+.contact-layout{display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;margin-top:3rem;}
+.contact-text p{font-size:.96rem;font-weight:300;color:var(--stone);line-height:1.9;margin-bottom:1.1rem;}
+.contact-text p strong{font-weight:500;color:var(--ink);}
+.contact-direct{margin-top:2rem;padding:1.4rem;background:var(--mist);border-left:2px solid var(--fern);font-size:.9rem;color:var(--stone);font-weight:300;line-height:1.7;}
+.contact-direct strong{font-weight:500;color:var(--ink);}
+.form-group{margin-bottom:1.4rem;}
+.form-group label{display:block;font-size:.72rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--fern);margin-bottom:.4rem;}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:.8rem 1rem;background:white;border:1px solid var(--lichen);font-family:'Jost',sans-serif;font-size:.9rem;font-weight:300;color:var(--ink);transition:border-color .2s;-webkit-appearance:none;}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--fern);}
+.form-group textarea{resize:vertical;min-height:130px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-hint{margin-top:.7rem;font-size:.78rem;font-style:italic;color:var(--stone);}
+
+footer{background:var(--ink);padding:2rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;}
+footer p{font-size:.78rem;font-weight:300;color:rgba(238,240,236,.35);}
+footer a{color:rgba(238,240,236,.45);text-decoration:none;}
+footer a:hover{color:var(--lichen);}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(22px);}to{opacity:1;transform:translateY(0);}}
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.1s;}.d2{transition-delay:.2s;}.d3{transition-delay:.3s;}.d4{transition-delay:.4s;}
+
+@media(max-width:768px){
+  .about-layout,.place-layout,.contact-layout{grid-template-columns:1fr!important;gap:2rem;}
+  .services-grid{grid-template-columns:1fr;}
+  .gallery-grid{grid-template-columns:1fr 1fr;}
+  .gallery-item.tall img{height:218px;}
+  .photo-strip{grid-template-columns:repeat(2,1fr);}
+  .form-row{grid-template-columns:1fr;}
+  .section-wrap{padding:4.5rem 1.5rem;}
+  nav{padding:1rem 1.5rem;}
+  .nav-links{display:none;}
+  footer{justify-content:center;text-align:center;}
+  .rate-row{grid-template-columns:1fr auto;}
+  .rate-detail{display:none;}
+  .hero-content{padding:0 1.5rem 4rem;}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <span class="nav-name">Brit Myers</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#rates">Rates</a></li>
+    <li><a href="#place">The Island</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg" style="background-image:url('images/two-dogs-forest-trail.jpg');"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow"><span class="eyebrow-line"></span>Vashon Island, Washington</div>
+    <h1>Your home and animals,<br>cared for by <em>a neighbor</em><br>who lives here too.</h1>
+    <p class="hero-desc">Reliable, attentive pet sitting, house sitting, hive checks, and home care for island neighbors &#8212; from someone who lives here year-round and takes care of things the way you would.</p>
+    <div class="cta-group">
+      <a href="#contact" class="btn-primary">Get in touch</a>
+      <a href="#services" class="btn-outline">What I offer</a>
+    </div>
+  </div>
+</section>
+
+<div class="photo-strip">
+  <div class="strip-img"><img src="images/shepherd-fuchsias.jpg" alt="Golden shepherd in fuchsia garden" loading="lazy"></div>
+  <div class="strip-img"><img src="images/black-lab-puppy.jpg" alt="Black lab puppy" loading="lazy"></div>
+  <div class="strip-img"><img src="images/tabby-cat-couch.jpg" alt="Black cat green eyes" loading="lazy"></div>
+  <div class="strip-img"><img src="images/brown-dog-driftwood.jpg" alt="Brown dog on driftwood at Puget Sound" loading="lazy"></div>
+</div>
+<div class="rule"></div>
+
+<section id="about">
+  <div class="section-wrap">
+    <div class="section-label reveal">About</div>
+    <h2 class="reveal d1">A neighbor, not a service.</h2>
+    <div class="about-layout">
+      <div>
+        <div class="about-text reveal d2">
+          <p>I'm Brit Myers, a Vashon Island resident offering pet sitting, house sitting, farm animal care, hive checks, and home care for island neighbors. I live here year-round &#8212; I know the roads, the rhythms, and the ferries. When you're away, I'm already nearby.</p>
+          <p>My professional background is in environmental science, research program management, and ecological systems, with experience across federal agencies, scientific networks, and conservation organizations. I co-lead <a href="https://www.theestuarysalon.com" target="_blank" rel="noopener" style="color:var(--fern);text-decoration:underline;">The Estuary Salon</a>, a small business embedded in a salmon-bearing watershed just north of Burton, and I previously volunteered as a dog walker for the Seattle Animal Shelter. I've completed the Vashon Island Beekeeper Association's new beekeeper course, which informs how I approach hive checks.</p>
+          <p>I have experience with reactive dogs and am comfortable working with animals that need a calm, patient approach. I'm consistent about communication &#8212; you'll hear from me when I arrive, when something is worth noting, and when I leave.</p>
+          <p>More about my professional background on <a href="https://www.linkedin.com/in/britbmyers" target="_blank" rel="noopener" style="color:var(--fern);text-decoration:underline;">LinkedIn</a>.</p>
+        </div>
+      </div>
+      <div>
+          <img src="images/brit-myers.jpg" alt="Brit Myers" style="width:100%;height:320px;object-fit:cover;object-position:center 30%;display:block;margin-bottom:1.6rem;"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<div class="rule"></div>
+
+<section id="services" class="services-bg">
+  <div class="section-wrap">
+    <div class="section-label reveal">What I offer</div>
+    <h2 class="reveal d1">Services</h2>
+    <div class="services-grid">
+      <div class="svc reveal">
+        <img class="svc-img" src="images/cat-dog-cuddling.jpg" alt="Cat and dog cuddling together" loading="lazy" style="object-position:center;">
+        <div class="svc-body">
+          <span class="svc-glyph">🐕</span>
+          <div class="svc-name">Pet Sitting &#8212; In-Home Visits</div>
+          <div class="svc-desc">I come to your home to care for your pets on their own turf &#8212; feeding, fresh water, time and attention, and yard time or a short walk. Dogs, cats, small animals, and farm animals welcome. You get a check-in message with every visit.</div>
+          <div class="svc-note">Morning, mid-day, or evening. Multiple visits per day available.</div>
+        </div>
+      </div>
+      <div class="svc reveal d1">
+        <img class="svc-img" src="images/two-black-labs.jpg" alt="Pug and doodle settled in at home" loading="lazy">
+        <div class="svc-body">
+          <span class="svc-glyph">&#127968;</span>
+          <div class="svc-name">Overnight House Sitting</div>
+          <div class="svc-desc">I stay at your home overnight so your animals aren't alone and there's someone paying attention. Ideal for dogs who struggle with separation, multi-pet households, or anyone who wants eyes on the property. All regular pet care included.</div>
+          <div class="svc-note">Consecutive nights available for longer travel.</div>
+        </div>
+      </div>
+      <div class="svc reveal d2">
+        <img class="svc-img" src="images/christmas-cactus.png" alt="Cat peeking out from a paper bag at home" loading="lazy">
+        <div class="svc-body">
+          <span class="svc-glyph">&#127807;</span>
+          <div class="svc-name">Plant Watering &amp; Home Checks</div>
+          <div class="svc-desc">For trips without animals &#8212; or as an add-on to pet care. Water plants on your schedule, collect mail, cycle lights, check for anything unexpected, and send a quick note. The small things that matter when you're gone a week or more.</div>
+          <div class="svc-note">Easily combined with any pet care arrangement.</div>
+        </div>
+      </div>
+      <div class="svc reveal d2">
+        <img class="svc-img" src="images/mare-and-foal.jpg" alt="Mare and foal in a buttercup field on Vashon Island" loading="lazy" style="object-position:center top;">
+        <div class="svc-body">
+          <span class="svc-glyph">&#x1F413;</span>
+          <div class="svc-name">Farm Animal Care</div>
+          <div class="svc-desc">Feeding, watering, and checking on farm animals of all sizes while you&#8217;re away &#8212; from chickens, ducks, and rabbits to horses, goats, sheep, and pigs. Includes feed, fresh water, egg collection where applicable, and a welfare check to make sure everyone looks healthy and settled. Vashon has a lot of working animals; I&#8217;m comfortable across the range.</div>
+          <div class="svc-note">Pricing depends on the number and size of animals and the complexity of the setup. Can be combined with pet sitting or home checks. Let me know what your situation looks like.</div>
+        </div>
+      </div>
+            <div class="svc bee-card reveal d3" style="grid-column:1/-1;">
+        <img class="svc-img" src="images/bee-salvia.jpg" alt="Bright fuchsia garden on Vashon Island" loading="lazy" style="object-position:center 62%;">
+        <div class="svc-body">
+          <span class="svc-glyph">&#128029;</span>
+          <div class="svc-name">Bee Hive Checks</div>
+          <div class="svc-desc">If you keep bees and need someone to look in while you're away, I can do hive welfare checks &#8212; observing entrance activity, noting whether the hive is behaving normally, and reporting what I see. Best for neighbors who can walk me through their setup beforehand.</div>
+          <div class="svc-note">A trusted neighbor check-in, not a full inspection. Let's talk about your hive first.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="gallery-bg">
+  <div class="section-wrap">
+    <div class="section-label reveal">Past animals</div>
+    <h2 class="reveal d1">Some good ones<br>I've looked after.</h2>
+    <p class="gallery-sub reveal d2">Island dogs, cats with opinions, beach adventures, and indoor supervisors.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item tall reveal"><img src="images/black-labradoodle-window.jpg" alt="Black labradoodle in window seat" loading="lazy"></div>
+      <div class="gallery-item reveal d1"><img src="images/black-lab-puppy.jpg" alt="Black lab puppy looking up" loading="lazy"></div>
+      <div class="gallery-item reveal d2"><img src="images/tabby-cat-couch.jpg" alt="Black cat close-up green eyes" loading="lazy"></div>
+      <div class="gallery-item reveal d1"><img src="images/dog-snow-stick.jpg" alt="Dog with stick in snow" loading="lazy"></div>
+      <div class="gallery-item reveal d2"><img src="images/brown-dog-driftwood.jpg" alt="Brown dog on driftwood at Puget Sound beach" loading="lazy"></div>
+      <div class="gallery-item tall reveal d3"><img src="images/two-dogs-forest-trail.jpg" alt="Two dogs on mossy forest trail with ferns" loading="lazy"></div>
+      <div class="gallery-item reveal d2"><img src="images/two-black-labs.jpg" alt="Pug on desk beside curly doodle" loading="lazy"></div>
+      <div class="gallery-item reveal d3"><img src="images/cat-dog-indoors.jpg" alt="Tabby cat and tan dog at home" loading="lazy"></div>
+      <div class="gallery-item reveal d4"><img src="images/beach-driftwood-flowers.jpg" alt="Dog on beach, flowers on driftwood" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section id="rates">
+  <div class="section-wrap">
+    <div class="section-label reveal">Pricing</div>
+    <h2 class="reveal d1">Rates</h2>
+    <p class="rates-intro reveal d2">Clear starting points. Multi-pet households, longer arrangements, and regular bookings are all worth a conversation.</p>
+    <div class="rates-group reveal d2">
+      <div class="rates-group-title">Pet sitting visits</div>
+      <div class="rate-row"><div class="rate-label">Drop-in visit (30 min)</div><div class="rate-detail">Feeding, water, attention, brief outdoor time</div><div class="rate-price">$25</div></div>
+      <div class="rate-row"><div class="rate-label">Drop-in visit (60 min)</div><div class="rate-detail">Extended time; good for high-energy dogs or multiple pets</div><div class="rate-price">$40</div></div>
+    </div>
+    <div class="rates-group reveal d3">
+      <div class="rates-group-title">Overnight stays</div>
+      <div class="rate-row"><div class="rate-label">Overnight house sitting</div><div class="rate-detail">Arrive evening, leave morning; all pet care included</div><div class="rate-price">$85 &#8211; $100</div></div>
+    </div>
+    <div class="rates-group reveal">
+      <div class="rates-group-title">Home care &amp; specialty</div>
+      <div class="rate-row"><div class="rate-label">Home check / plant care</div><div class="rate-detail">Mail, plants, lights, walkthrough, check-in message</div><div class="rate-price">$20</div></div>
+      <div class="rate-row"><div class="rate-label">Farm animal care &#8212; small</div><div class="rate-detail">Chickens, ducks, rabbits; feed, water, egg collection</div><div class="rate-price">$25 &#8211; $35</div></div>
+      <div class="rate-row"><div class="rate-label">Farm animal care &#8212; large</div><div class="rate-detail">Horses, goats, sheep, pigs; feed, water, welfare check</div><div class="rate-price">$45 &#8211; $65</div></div>
+      <div class="rate-row"><div class="rate-label">Bee hive check</div><div class="rate-detail">Entrance observation and activity report &#8212; requires prior briefing</div><div class="rate-price">$20 &#8211; $30</div></div>
+    </div>
+    <p class="rates-foot reveal">Additional animals: +$10/visit for 3 or more. Rates are starting points &#8212; extended stays and regular arrangements are worth a direct conversation.</p>
+  </div>
+</section>
+<div class="rule"></div>
+
+<section id="place" class="place-bg">
+  <div class="section-wrap">
+    <div class="section-label reveal">Where I work</div>
+    <h2 class="reveal d1">All of <em>Vashon Island.</em><br>No ferry on your end.</h2>
+    <div class="place-layout">
+      <div class="place-text reveal d2">
+        <p>I cover the full island &#8212; from the north end down to Burton and Portage, east to west. I don't commute here, which means I'm actually available when something comes up and not watching a ferry schedule.</p>
+        <p>I know the island vets and can get to the right one quickly if a situation calls for it. I'm comfortable with island realities &#8212; the ferries, the power outages, the patches of no cell service &#8212; because I live with them.</p>
+        <p>Not sure if you're in range? Reach out anyway. If it's on Vashon or Maury Island, I can almost certainly help.</p>
+      </div>
+            <div class="place-img-wrap reveal d3">
+        <img src="images/beach-driftwood-flowers.jpg" alt="Puget Sound beach with driftwood and wildflowers" loading="lazy">
+        <div class="place-img-caption">Puget Sound &#183; Vashon Island</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="rule"></div>
+
+<section id="contact">
+  <div class="section-wrap">
+    <div class="section-label reveal">Reach out</div>
+    <h2 class="reveal d1">Let's talk about<br>your animals.</h2>
+    <div class="contact-layout">
+      <div class="contact-text reveal d2">
+        <p>The best first step is a short message &#8212; tell me about your pets, your dates, and what you're looking for. I'll respond promptly and we can figure out whether it's a good fit.</p>
+        <p>For overnight stays or regular arrangements, I prefer to do a quick meet-and-greet first. For hive checks, I'll want a brief walkthrough of your setup before you leave.</p>
+        <p>Questions about specific situations, animals with medical needs, or anything unusual are welcome. I'd rather talk it through than have you guess.</p>
+        <div class="contact-direct">
+          <strong>britbmyers@gmail.com</strong><br>
+          Or use the form &#8212; I check both regularly.
+        </div>
+      </div>
+      <div class="reveal d3">
+        <form action="mailto:britbmyers@gmail.com" method="GET" enctype="text/plain">
+          <div class="form-row">
+            <div class="form-group"><label for="name">Your name</label><input type="text" id="name" name="name" placeholder="Name"></div>
+            <div class="form-group"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="you@email.com"></div>
+          </div>
+          <div class="form-group">
+            <label for="svc">Service needed</label>
+            <select id="svc" name="subject">
+              <option value="">Select a service...</option>
+              <option>Pet sitting &#8212; drop-in visits</option>
+              <option>Overnight house sitting</option>
+              <option>Plant watering / home checks</option>
+              <option>Farm animal care</option>
+              <option>Bee hive checks</option>
+              <option>Combination / not sure yet</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="msg">Pets, dates, and anything useful to know</label>
+            <textarea id="msg" name="body" placeholder="Type of animals, approximate dates, any special needs or notes about your setup..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;text-align:center;font-family:'Jost',sans-serif;">Send message</button>
+          <p class="form-hint">Opens your email client. You can also email britbmyers@gmail.com directly.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Brit Myers &nbsp;&#183;&nbsp; Vashon Island, Washington &nbsp;&#183;&nbsp; Pet &amp; House Sitting</p>
+  <p><a href="https://britmyers.github.io">britmyers.github.io</a> &nbsp;&#183;&nbsp; <a href="mailto:britbmyers@gmail.com">britbmyers@gmail.com</a></p>
+</footer>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}}),{threshold:0.08});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
